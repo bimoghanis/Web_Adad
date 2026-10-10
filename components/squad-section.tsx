@@ -57,7 +57,7 @@ export function MemberCard({member:m,onOpen}:{member:Member;onOpen:()=>void}){
       <button className="open-file" onClick={handleClick} aria-label={`Buka Berkas ${m.name}`}>
         Buka Berkas <span aria-hidden="true">＋</span>
       </button>
-      {m.name==='FAHRI'&&<a href="#fahri-locator" className="find-fahri">Cari Fahri</a>}
+      {m.name==='FAHRI'&&<a href="/laboratorium/#fahri-locator" className="find-fahri">Cari Fahri</a>}
     </div>
     {sparks>0&&!reduced&&<div key={sparks} className="card-sparks" aria-hidden="true">
       <i/><i/><i/><i/><i/><i/>

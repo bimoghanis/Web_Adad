@@ -25,7 +25,6 @@ Build menghasilkan website statis di `out/`. Untuk menguji build statis, jalanka
 Semua data berada di **lib/data.ts**:
 
 - `members`: fakta anggota, lore, warna, dan indeks avatar.
-- `siteConfig.discordUrl`: isi URL undangan Discord asli; `null` membuat tombol disabled.
 - `siteConfig.socials`: tambah `{ label, url }` hanya untuk tautan yang tersedia.
 - `clips`: kosong sampai ada clip asli. Setiap entri mempunyai `id`, `title`, `category`, `src`, serta opsional `poster` dan `captions` (WebVTT). `src` harus berupa file MP4/WebM yang dapat diputar browser, bukan URL halaman YouTube. Video tidak autoplay. Gunakan file di `public/clips/` atau URL HTTPS langsung. Tambahkan caption untuk video yang memiliki dialog/audio penting.
 - `excuses`, `memos`, `locatorSteps`: copy humor eksperimen.
@@ -36,7 +35,7 @@ Kategori clip: `Clutch`, `Fail`, `Absolute Cinema`. Contoh struktur (bukan data 
 { id: 'id-unik', title: 'Judul clip asli', category: 'Clutch', src: '/clips/file-asli.mp4', captions: '/clips/file-asli.vtt' }
 ```
 
-Filter Valorant menggunakan keberadaan data agent. Filter Mobile Legends menggunakan keberadaan data hero, sehingga saat ini hanya Alwan dan Bimo tampil.
+Filter Valorant menggunakan keberadaan data agent. Filter Mobile Legends menggunakan keberadaan data hero, sesuai data anggota yang sudah tercatat.
 
 ## Struktur
 
@@ -86,7 +85,7 @@ Tes mencakup semua seed puzzle jaringan/labirin, pasangan memori, urutan, feedba
 
 ## Expansion 02 — Laboratorium Restu 3D
 
-Tersedia di beranda dan `/operasi-alwan/#holo-lab`.
+Tersedia di `/operasi-alwan/#holo-lab`.
 - Hologram kubus CSS 3D dengan enam sisi, orbit, grid perspektif, rotasi otomatis, drag dan tombol keyboard. Tidak memerlukan WebGL atau unduhan engine 3D.
 - Enam hologram lore untuk di-scan ke Codex; empat achievement lokal.
 - Recon Rush: ronde refleks 20 detik, combo, penalti salah tap, statistik akurasi dan rekor. Tombol angka 1–9 bekerja saat arena memiliki fokus. Pindah tab membatalkan ronde agar timer tidak berjalan tanpa terlihat.
@@ -111,3 +110,9 @@ npm run typecheck
 npm test
 npm run build
 ```
+
+## Navigasi ringkas dan tema merah
+
+Beranda memuat hero, squad, arena Valorant/Mobile Legends, dan dua pintu masuk mode. Tombol Discord dihapus. Eksperimen tersedia di `/laboratorium/`, sedangkan campaign dan hologram ada di `/operasi-alwan/`. Ikon ML berupa monogram perisai bergaya ADAD. Tema merah koral memakai aksen `#ff4655`; avatar Alwan tetap biru.
+
+Domain sendiri dapat dipasang melalui Vercel Project → Settings → Domains, lalu mengikuti record DNS yang diberikan Vercel di penyedia domain. Update rutin: edit lokal → periksa typecheck/build → commit → push `main` → Vercel otomatis build dan deploy jika integrasi GitHub sudah diaktifkan. Perubahan besar bisa memakai branch preview sebelum merge ke `main`.

@@ -1,5 +1,6 @@
 'use client';
 import {useState} from 'react';
+import {GameIcon} from './game-icons';
 import {members} from '@/lib/data';
 export function GameArena(){
   const [hoveredVal,setHoveredVal]=useState<string|null>(null);
@@ -11,9 +12,9 @@ export function GameArena(){
       <p>Level intelektual superior.<br/>Eksekusi situasional.</p>
     </div>
     <div className="arena-grid">
-      <article className="arena-panel valorant">
+      <article id="valorant" className="arena-panel valorant">
         <div className="arena-top mono"><span>DEPARTEMEN 01 / TACTICAL FPS</span><span>4 PENELITI</span></div>
-        <div className="arena-name"><span className="arena-symbol" aria-hidden="true">V</span><h3>VALORANT</h3></div>
+        <div className="arena-name"><span className="arena-symbol" aria-hidden="true"><GameIcon game="valorant"/></span><h3>VALORANT</h3></div>
         <p>Laboratorium aim dan komunikasi terlambat.</p>
         <div className="arena-members">
           {members.filter(m=>m.agent).map(m=><div key={m.id}
@@ -24,9 +25,9 @@ export function GameArena(){
         </div>
         <p className="arena-note mono">"Empat agent. Minimal enam pendapat."</p>
       </article>
-      <article className="arena-panel mobile-legends">
+      <article id="mobile-legends" className="arena-panel mobile-legends">
         <div className="arena-top mono"><span>DEPARTEMEN 02 / MOBILE MOBA</span><span>{members.filter(m=>m.ml).length} PENELITI</span></div>
-        <div className="arena-name"><span className="arena-symbol" aria-hidden="true">M</span><h3>MOBILE<br/>LEGENDS</h3></div>
+        <div className="arena-name"><span className="arena-symbol" aria-hidden="true"><GameIcon game="mlbb"/></span><h3>MOBILE<br/>LEGENDS</h3></div>
         <p>Pusat studi rotasi dan kepercayaan diri.</p>
         <div className="arena-members">
           {members.filter(m=>m.ml).map(m=><div key={m.id}
