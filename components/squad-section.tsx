@@ -111,13 +111,13 @@ export function SquadSection(){
     transition={{duration:reduce?0:.35}}
   >
     <div className="section-kicker mono">
-      <span>01 / DEWAN INTELEKTUAL</span>
+      <span>01 / ISI PARTY PALING BERISIK</span>
       <span>5 ANGGOTA. 0 KONSENSUS.</span>
     </div>
     <div className="section-heading">
       <div>
         <h2>LIMA OTAK.<br/><span className="acid">SATU PUN BELUM SYNC.</span></h2>
-        <p>Kenali para ahli di balik keputusan yang tidak diminta siapa-siapa.</p>
+        <p>Ini orang-orangnya. Kalau kalah, jangan percaya versi cerita mereka.</p>
       </div>
       <span className="round-stamp">SQUAD<br/><b>APPROVED</b><br/>BY THE SQUAD</span>
     </div>

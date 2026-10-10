@@ -7,16 +7,16 @@ export function GameArena(){
   const [hoveredVal,setHoveredVal]=useState<string|null>(null);
   const [hoveredMl,setHoveredMl]=useState<string|null>(null);
   return <section id="arena" className="section arena-section">
-    <div className="section-kicker mono"><span>02 / DUA CABANG PENELITIAN</span><span>PILIH MEDAN PERDEBATAN</span></div>
+    <div className="section-kicker mono"><span>02 / DUA CABANG PENELITIAN</span><span>PILIH TEMPAT NYARI ALASAN</span></div>
     <div className="section-heading">
       <h2>BEDA ARENA.<br/>SAMA-SAMA <span className="outline">YAKIN.</span></h2>
-      <p>Level intelektual superior.<br/>Eksekusi situasional.</p>
+      <p>Beda tombol, sama paniknya.<br/>Yang penting kalahnya bareng.</p>
     </div>
     <div className="arena-grid">
       <article id="valorant" className="arena-panel valorant">
         <div className="arena-top mono"><span>DEPARTEMEN 01 / TACTICAL FPS</span><span>4 PENELITI</span></div>
         <div className="arena-name"><span className="arena-symbol" aria-hidden="true"><GameIcon game="valorant"/></span><h3>VALORANT</h3></div>
-        <p>Laboratorium aim dan komunikasi terlambat.</p><WeaponStrip/>
+        <p>Suka main pelan? Di sini foreplay-nya 40 detik, execute-nya lupa.</p><WeaponStrip/>
         <div className="arena-members">
           {members.filter(m=>m.agent).map(m=><div key={m.id}
             className={`arena-member-row${hoveredVal===m.id?' arena-member-glow':''}`}
@@ -29,7 +29,7 @@ export function GameArena(){
       <article id="mobile-legends" className="arena-panel mobile-legends">
         <div className="arena-top mono"><span>DEPARTEMEN 02 / MOBILE MOBA</span><span>{members.filter(m=>m.ml).length} PENELITI</span></div>
         <div className="arena-name"><span className="arena-symbol" aria-hidden="true"><GameIcon game="mlbb"/></span><h3>MOBILE<br/>LEGENDS</h3></div>
-        <p>Pusat studi rotasi dan kepercayaan diri.</p>
+        <p>Komitmen jaga lane aja susah. Apalagi jaga hubungan.</p>
         <div className="arena-members">
           {members.filter(m=>m.ml).map(m=><div key={m.id}
             className={`arena-member-row${hoveredMl===m.id?' arena-member-glow':''}`}
