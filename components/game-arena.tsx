@@ -1,5 +1,6 @@
 'use client';
 import {useState} from 'react';
+import {WeaponStrip} from './weapon-icons';
 import {GameIcon} from './game-icons';
 import {members} from '@/lib/data';
 export function GameArena(){
@@ -15,7 +16,7 @@ export function GameArena(){
       <article id="valorant" className="arena-panel valorant">
         <div className="arena-top mono"><span>DEPARTEMEN 01 / TACTICAL FPS</span><span>4 PENELITI</span></div>
         <div className="arena-name"><span className="arena-symbol" aria-hidden="true"><GameIcon game="valorant"/></span><h3>VALORANT</h3></div>
-        <p>Laboratorium aim dan komunikasi terlambat.</p>
+        <p>Laboratorium aim dan komunikasi terlambat.</p><WeaponStrip/>
         <div className="arena-members">
           {members.filter(m=>m.agent).map(m=><div key={m.id}
             className={`arena-member-row${hoveredVal===m.id?' arena-member-glow':''}`}
