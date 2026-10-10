@@ -1,0 +1,2 @@
+Tool mode: built-in imagegen edit. Source: public/avatars.png.
+Create a standalone portrait of only the leftmost Alwan radar scout. Preserve identity, white hair, cream skin, pose, goggles, headset, radar patch, distressed manga ink. Recolor green costume, lenses, eyes and radar background to electric cobalt blue and cyan. Full bleed portrait, no text, no other characters. Output: public/alwan-blue.png.

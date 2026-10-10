@@ -1,0 +1,7 @@
+export type RecordBook={best:number;plays:number;scanned:number[];daily:Record<string,number>};
+export const empty=():RecordBook=>({best:0,plays:0,scanned:[],daily:{}});
+export function readBook(raw:string|null):RecordBook{try{const v=JSON.parse(raw||'null');if(!v||typeof v!=='object')return empty();const valid=(x:unknown)=>Number.isInteger(x)&&Number(x)>=0&&Number(x)<=100000;return {best:valid(v.best)?v.best:0,plays:valid(v.plays)?v.plays:0,scanned:Array.isArray(v.scanned)?[...new Set<number>(v.scanned.filter((x:unknown)=>Number.isInteger(x)&&Number(x)>=0&&Number(x)<6))]:[],daily:Object.fromEntries(Object.entries(v.daily||{}).filter(([k,n])=>/^\d{4}-\d{2}-\d{2}$/.test(k)&&valid(n)).slice(-30).map(([k,n])=>[k,Number(n)]))}}catch{return empty()}}
+export function today(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Jakarta',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
+export function targetAt(seed:number,index:number,previous:number){const n=((Math.imul(seed+index+1,2654435761)>>>0)%8);return n>=previous?n+1:n}
+
+export function mergeBooks(a:RecordBook,b:RecordBook):RecordBook{return {best:Math.max(a.best,b.best),plays:Math.max(a.plays,b.plays),scanned:[...new Set([...a.scanned,...b.scanned])],daily:Object.fromEntries([...new Set([...Object.keys(a.daily),...Object.keys(b.daily)])].sort().slice(-30).map(d=>[d,Math.max(a.daily[d]||0,b.daily[d]||0)]))}}
